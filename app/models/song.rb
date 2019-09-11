@@ -12,8 +12,8 @@ class Song < ActiveRecord::Base
     # Hint: you won't want to create an artist record every time this method is called, only if an Drake is *not found*
     if Artist.where("name = ?", "Drake").empty?
       self.artist = Artist.create(name: "Drake")
-    else 
+    else
       self.artist = Artist.find_by(name: "Drake")
-    end 
+    end
   end
 end
